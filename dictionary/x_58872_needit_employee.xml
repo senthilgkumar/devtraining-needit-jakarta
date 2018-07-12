@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Students" max_length="40" name="x_58872_needit_employee" type="collection">
+        <element label="FirstName" max_length="30" name="firstname" type="string"/>
+        <element label="LastName" max_length="30" name="lastname" type="string"/>
+        <element label="Location" max_length="20" name="location" type="string"/>
+    </element>
+</database>
