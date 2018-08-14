@@ -14,11 +14,66 @@
    if(newValue == ''){
 	   return;
    }
+	
+//if((g_form.getValue('newValue')=='') && (g_form.getValue('oldValue')==''))  // for fisrt click
+/*var i=1;
+if(newValue=='')
+{alert('if');
+	g_form.setValue('short_description',i);}
+
+
+else
+
+
+{alert('else');
+ i++;
+	g_form.setValue('short_description',i);
+
+
+}
+
+*/
+/*	var u_request_type = g_form.getValue('u_request_type');
+	var count = new GlideAggregate('NeedIt');
+count.addAggregate('u_request_type');
+count.query();
+var incidents = 0;
+if(count.next()) 
+   incidents = count.getAggregate('COUNT');
+	g_form.setValue('short_description',incidents);
+*/
+	
 	var whatneedded = g_form.getValue('u_what_needed');
-	g_form.clearValue('u_what_needed');
-	alert('newValue='+newValue);
-	alert('oldValue='+oldValue);
-	//if(newValue=='')
+	g_form.clearOptions('u_what_needed');
+	//alert('whatneedded='+whatneedded);
+	//alert('newValue='+newValue);
+	if(newValue=='hr'){
+		//alert('if hr');
+
+		g_form.addOption('u_what_needed','hr1','Human Resources 1');
+		g_form.addOption('u_what_needed','hr1','Human Resources 2');
+		g_form.addOption('u_what_needed','other','Other');
+	}
+	if(newValue=='facilities'){
+		//alert('if facilities');
+
+		g_form.addOption('u_what_needed','facilities1','Facilities 1');
+		g_form.addOption('u_what_needed','facilities2','Facilities 2');
+		g_form.addOption('u_what_needed','other','Other');
+	}
+	if(newValue=='legal'){
+		//alert('if legal');
+
+		g_form.addOption('u_what_needed','legal1','Legal 1');
+		g_form.addOption('u_what_needed','legal2','Legal 2');
+		g_form.addOption('u_what_needed','other','Other');
+	}
+	if(isLoading && g_form.isNewRecord()){
+		/*alert('isLoading:'+isLoading);
+		alert('g_form.isNewRecord():'+g_form.isNewRecord());
+		alert('whatneedded='+whatneedded);*/
+		g_form.setValue('u_what_needed',whatneedded);
+	}
 	
 }]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
@@ -27,7 +82,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>96c656e3db2313000cf5880948961946</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>42</sys_mod_count>
         <sys_name>NeedIt Request Type Options</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
@@ -35,7 +90,7 @@
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_script_client_96c656e3db2313000cf5880948961946</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-08-02 06:24:29</sys_updated_on>
+        <sys_updated_on>2018-08-07 17:09:01</sys_updated_on>
         <table>x_58872_needit_needit</table>
         <type>onChange</type>
         <ui_type>10</ui_type>
